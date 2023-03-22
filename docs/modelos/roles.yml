@@ -1,0 +1,27 @@
+definitions:
+  roles:
+    type: object
+    properties:
+      id_roles:
+        type: number
+      name:
+        type: string
+      state:
+        type: boolean
+      created_at:
+        type: string
+      updated_at:
+        type: string
+        
+components:
+  schemas:
+    roles:
+        type: object
+        properties:            
+            rol:
+                type: string
+                description: Nombre de tipo rol
+        required:
+            - rol         
+        example:
+            rol: Estudiante

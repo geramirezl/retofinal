@@ -1,0 +1,90 @@
+definitions:
+  user:
+    type: object
+    properties:
+      id_user:
+        type: number
+      first_name:
+        type: string
+      second_name:
+        type: string
+      surname_name:
+        type: string
+      second_sur_name:
+        type: string
+      type_document:
+        type: number
+      document_number:
+        type: string
+      email:
+        type: string
+      password:
+        type: string
+      rol_id:
+        type: number
+      phone:
+        type: string
+      state:
+        type: boolean
+      created_at:
+        type: string
+      updated_at:
+        type: string
+        
+components:
+  schemas:
+    user:
+        type: object
+        properties:            
+            first_name:
+                type: string
+                description: Nombre inicial
+            second_name:
+                type: string
+                description: Segundo nombre
+            surname_name:
+                type: string
+                description: Apellido inicial
+            second_sur_name:
+                type: string
+                description: Segundo apellido
+            type_document:
+                type: number
+                description: Id de tipo documento
+            document_number:
+                type: string
+                description: numero de documento
+            email:
+                type: string
+                description: correo electronico
+            password:
+                type: string
+                description: password necesaria
+            rol_id:
+                type: number
+                description: id de rol de usuario
+            phone:
+                type: string
+                description: telefono
+        required:
+            - first_name
+            - second_name
+            - surname_name
+            - second_sur_name
+            - type_document
+            - document_number
+            - email
+            - password
+            - rol_id
+            - phone     
+        example:
+            first_name: daniel
+            second_name: jose
+            surname_name: cruz
+            second_sur_name: casallas
+            typeDocument: 1
+            document_numer: 124456788
+            email: user9@gmail.com
+            password: 12345
+            rol: 2
+            phone: 64044050

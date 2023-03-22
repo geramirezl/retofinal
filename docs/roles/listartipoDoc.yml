@@ -1,0 +1,25 @@
+/configure/listarRoles:
+  get:
+    tags:
+      - Roles
+    security: []
+    description: Listar tipos de roles
+    produces:
+      - application/json
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/definitions/roles'
+              example:
+                {
+                    "id_rol": 2,
+                    "name": "Estudiante",
+                    "state": true,
+                    "created_at": "2023-03-21T19:45:50.877-05:00",
+                    "updated_at": "2023-03-21T19:45:50.893-05:00"
+                }

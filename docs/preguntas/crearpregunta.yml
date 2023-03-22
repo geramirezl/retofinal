@@ -1,0 +1,59 @@
+/api/v1/questions/create:
+  post:
+    tags:
+      - Questions
+    security: []
+    description: Crear Pregunta
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              question:
+                type: string
+
+              options:
+                type: object
+                properties:
+                  opcion: string
+                  iscorrect: boolean
+              
+          example:
+            {
+              "question": "¿que dia es hoy?",
+              "options": [ 
+                  {
+                      "opcion":"esta es correcta",
+                      "iscorrect":true
+                  },{
+                      "opcion":"incorrecta",
+                      "iscorrect":false
+                  },{
+                      "opcion":"incorrecta",
+                      "iscorrect":false
+                  },{
+                      "opcion":"incorrecta",
+                      "iscorrect":false
+                  } ]
+            }      
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                message:
+                  type: string
+                  description: Mensaje de respuesta 
+            example:
+              {
+                "state": true,
+                "message": "Pregunta creada exitosamente"
+              }
+
+

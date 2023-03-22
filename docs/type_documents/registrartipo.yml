@@ -1,0 +1,47 @@
+
+/configure/registrarDocumentos:
+  post:
+    tags:
+      - Type_documents
+    security: []
+    description: Registrar tipo Documentos
+    requestBody:
+      content:
+        application/json:
+          schema:
+             $ref: '#/components/schemas/typeDoc'            
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tipo_doc:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    state:
+                      type: boolean
+                    created_at:
+                      type: string
+                    updated_at:
+                      type: string
+                    id_doctype: 
+                      type: number
+                msj:
+                  type: string
+                  description: Mensaje de respuesta 
+            example:
+              {
+                  "tipoDoc": {
+                      "name": "cedula",
+                      "state": true,
+                      "created_at": "2023-03-21T19:45:50.877-05:00",
+                      "updated_at": "2023-03-21T19:45:50.893-05:00",
+                      "id_doctype": 10
+                  },
+                  "msj": "Tipo Documento registrado"
+              }

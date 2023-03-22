@@ -1,0 +1,27 @@
+definitions:
+  typeDoc:
+    type: object
+    properties:
+      id_doctype:
+        type: number
+      name:
+        type: string
+      state:
+        type: boolean
+      created_at:
+        type: string
+      updated_at:
+        type: string
+        
+components:
+  schemas:
+    typeDoc:
+        type: object
+        properties:            
+            tipo_documento:
+                type: string
+                description: Nombre de tipo documento
+        required:
+            - tipo_documento           
+        example:
+            tipo_documento: Cedula
