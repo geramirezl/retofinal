@@ -1,0 +1,59 @@
+/api/v1/questions/getOptions/{id}:
+  get:
+    tags:
+      - Answers
+    security: []
+    description: Listar opciones por id de Pregunta
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        in: path
+        required: true
+        description: ID de la pregunta a modificar
+        schema:
+          type: integer
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                message:
+                  type: string
+                options:
+                  type: array
+                  properties:
+                    id:
+                      type: number
+                    question:
+                      type: string
+              items:
+                
+              example:
+                {
+                    "state": true,
+                    "message": "Listado de opciones",
+                    "options": [
+                        {
+                            "id": 1,
+                            "option": "esta es correcta"
+                        },
+                        {
+                            "id": 3,
+                            "option": "incorrecta"
+                        },
+                        {
+                            "id": 4,
+                            "option": "incorrecta"
+                        },
+                        {
+                            "id": 2,
+                            "option": "correcta"
+                        }
+                    ]
+                }

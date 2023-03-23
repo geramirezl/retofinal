@@ -1,0 +1,35 @@
+/api/v1/user/getUser/{id}:
+  get:
+    tags:
+      - User
+    security: []
+    description: Buscar usuario por su ID
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        in: path
+        required: true
+        description: ID del usuario
+        schema:
+          type: integer
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user'
+            items:
+              
+            example:
+              {
+                  "firstName": "daniel",
+                  "secondName": "jose",
+                  "surname": "cruz",
+                  "secondSurName": "casallas",
+                  "typeDocument": 1,
+                  "documentNumber": "123456789",
+                  "email": "user@gmail.co",
+                  "phone": "32123122314"
+              }

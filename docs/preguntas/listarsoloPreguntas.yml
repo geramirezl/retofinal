@@ -1,0 +1,45 @@
+/api/v1/questions/getQuestions:
+  get:
+    tags:
+      - Questions
+    security: []
+    description: Listar solo las preguntas
+    produces:
+      - application/json
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                questions:
+                  type: array
+                  properties:
+                    id:
+                      type: number
+                    question:
+                      type: string
+              items:
+                
+              example:
+                {
+                    "state": true,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "¿que dia es hoy?"
+                        },
+                        {
+                            "id": 3,
+                            "question": "¿que dia es mañana?"
+                        },
+                        {
+                            "id": 5,
+                            "question": "¿que dia es hoy?"
+                        }
+                    ]
+                }

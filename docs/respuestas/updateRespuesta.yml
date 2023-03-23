@@ -1,0 +1,48 @@
+/api/v1/questions/updateAnswer/{id}:
+  put:
+    tags:
+      - Answers
+    security: []
+    description: Modificar Opciones Respuesta
+    parameters:
+      - name: id
+        in: path
+        required: true
+        description: ID de la respuesta a modificar
+        schema:
+          type: integer
+    requestBody:
+      content:
+        application/json:
+          schema:
+            opcion:
+              type: string
+            iscorrect:
+              type: boolean
+          example:
+            {
+                "opcion": "correcta",
+                "iscorrect":true
+            }
+
+          
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                message:
+                  type: string
+                  description: Mensaje de respuesta 
+            example:
+              {
+                  "state": true,
+                  "message": "opcion Editada con exito"
+              }
+
+

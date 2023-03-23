@@ -1,0 +1,50 @@
+/api/v1/user/updateUser/{id}:
+  put:
+    tags:
+      - User
+    security: []
+    description: Modificar información usuario
+    parameters:
+      - name: id
+        in: path
+        required: true
+        description: ID del usuario a modificar
+        schema:
+          type: integer
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/user'
+          example:
+            {
+                "firstName": "daniel",
+                "secondName": "jose",
+                "surname": "cruz",
+                "secondSurName": "casallas",
+                "typeDocument": 1,
+                "documentNumber": "2345678930",
+                "email": "danielc388@gmail.co",
+                "phone": "32123122314"
+            }
+
+          
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                message:
+                  type: string
+                  description: Mensaje de respuesta 
+            example:
+              {
+                  "state": true,
+                  "message": "Se actualizo correctamente"
+              }
+

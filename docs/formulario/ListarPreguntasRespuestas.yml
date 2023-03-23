@@ -1,0 +1,85 @@
+/api/v1/form/getquestions:
+  get:
+    tags:
+      - Form
+    security: []
+    description: Listar preguntas con opciones
+    produces:
+      - application/json
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                questions:
+                  type: array
+                  properties:
+                    question:
+                      type: string
+                    id:
+                      type: number
+                    options:
+                      type: array
+                      properties:
+                        id:
+                          type: number
+                        option:
+                          type: string
+
+              items:
+                
+              example:
+                {
+                    "state": true,
+                    "questions": [
+                        {
+                            "question": "¿que dia es mañana?",
+                            "id": 3,
+                            "options": [
+                                {
+                                    "id": 9,
+                                    "option": "esta es correcta"
+                                },
+                                {
+                                    "id": 10,
+                                    "option": "incorrecta"
+                                },
+                                {
+                                    "id": 11,
+                                    "option": "incorrecta"
+                                },
+                                {
+                                    "id": 12,
+                                    "option": "incorrecta"
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿que dia es hoy?",
+                            "id": 1,
+                            "options": [
+                                {
+                                    "id": 1,
+                                    "option": "esta es correcta"
+                                },
+                                {
+                                    "id": 3,
+                                    "option": "incorrecta"
+                                },
+                                {
+                                    "id": 4,
+                                    "option": "incorrecta"
+                                },
+                                {
+                                    "id": 2,
+                                    "option": "correcta"
+                                }
+                            ]
+                        }
+                    ]
+                }
